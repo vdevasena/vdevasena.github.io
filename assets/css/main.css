@@ -1010,6 +1010,258 @@ main {
 	}
 }
 
+/* Inline link
+   ------------------------------------------------------------ */
+.inline-link {
+	color: var(--accent);
+	border-bottom: 1px dashed rgba(124, 158, 255, 0.4);
+	transition: all 0.2s var(--ease);
+}
+
+.inline-link:hover {
+	color: var(--accent-2);
+	border-bottom-color: var(--accent-2);
+}
+
+/* Inline code in project descriptions */
+.project__desc code {
+	font-family: var(--font-mono);
+	font-size: 12.5px;
+	padding: 1px 6px;
+	background: rgba(124, 158, 255, 0.08);
+	border: 1px solid rgba(124, 158, 255, 0.15);
+	border-radius: 4px;
+	color: var(--accent);
+}
+
+/* Featured project (spans 2 cols on wide screens)
+   ------------------------------------------------------------ */
+@media (min-width: 880px) {
+	.projects {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.project--featured {
+		grid-column: span 2;
+		display: grid;
+		grid-template-columns: 1.1fr 1fr;
+		gap: 0;
+	}
+
+	.project--featured .project__media {
+		aspect-ratio: auto;
+		min-height: 320px;
+	}
+
+	.project--featured .project__body {
+		padding: 36px 40px;
+		justify-content: center;
+	}
+
+	.project--featured .project__title {
+		font-size: 1.55rem;
+	}
+
+	.project--featured .project__desc {
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 1100px) {
+	.projects {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.project--featured {
+		grid-column: span 3;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Project placeholder (for featured AI projects without screenshot)
+   ------------------------------------------------------------ */
+.project__placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+	background:
+		radial-gradient(circle at 30% 30%, rgba(124, 158, 255, 0.18), transparent 55%),
+		radial-gradient(circle at 70% 70%, rgba(94, 234, 212, 0.15), transparent 55%),
+		linear-gradient(135deg, #0e1424 0%, #131a2e 100%);
+	overflow: hidden;
+}
+
+.project__placeholder::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+	background-size: 24px 24px;
+	mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%);
+}
+
+.project__placeholder > i {
+	font-size: 56px;
+	color: var(--accent);
+	opacity: 0.85;
+	filter: drop-shadow(0 0 24px rgba(124, 158, 255, 0.4));
+	position: relative;
+	z-index: 1;
+}
+
+.project__placeholder-grid {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 8px;
+	position: relative;
+	z-index: 1;
+}
+
+.project__placeholder-grid span {
+	padding: 6px 14px;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 999px;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	color: var(--text);
+	backdrop-filter: blur(8px);
+}
+
+.project__placeholder--alt {
+	background:
+		radial-gradient(circle at 70% 30%, rgba(196, 181, 253, 0.18), transparent 55%),
+		radial-gradient(circle at 30% 70%, rgba(124, 158, 255, 0.18), transparent 55%),
+		linear-gradient(135deg, #0e1424 0%, #131a2e 100%);
+}
+
+.project__placeholder-vec {
+	position: relative;
+	z-index: 1;
+	width: 200px;
+	height: 60px;
+}
+
+.vec-dot {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: var(--accent);
+	box-shadow: 0 0 16px var(--accent);
+	animation: vec-pulse 3s var(--ease) infinite;
+}
+
+.vec-dot:nth-child(1) { top: 10px;  left: 0;    animation-delay: 0s;   background: var(--accent); box-shadow: 0 0 16px var(--accent); }
+.vec-dot:nth-child(2) { top: 30px;  left: 40px; animation-delay: 0.3s; background: var(--accent-2); box-shadow: 0 0 16px var(--accent-2); }
+.vec-dot:nth-child(3) { top: 0;     left: 80px; animation-delay: 0.6s; background: var(--accent-3); box-shadow: 0 0 16px var(--accent-3); }
+.vec-dot:nth-child(4) { top: 40px;  left: 120px; animation-delay: 0.9s; background: var(--accent); box-shadow: 0 0 16px var(--accent); }
+.vec-dot:nth-child(5) { top: 15px;  left: 160px; animation-delay: 1.2s; background: var(--accent-2); box-shadow: 0 0 16px var(--accent-2); }
+.vec-dot:nth-child(6) { top: 35px;  left: 195px; animation-delay: 1.5s; background: var(--accent-3); box-shadow: 0 0 16px var(--accent-3); }
+
+@keyframes vec-pulse {
+	0%, 100% { transform: scale(1); opacity: 0.9; }
+	50% { transform: scale(0.6); opacity: 0.5; }
+}
+
+/* Writing / Articles
+   ------------------------------------------------------------ */
+.writing {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+}
+
+.article {
+	display: block;
+	padding: 28px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-lg);
+	transition: all 0.3s var(--ease);
+	position: relative;
+	overflow: hidden;
+}
+
+.article::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--grad);
+	opacity: 0;
+	transition: opacity 0.3s var(--ease);
+}
+
+.article:hover {
+	transform: translateY(-4px);
+	border-color: var(--border-strong);
+	background: var(--surface-hover);
+	box-shadow: var(--shadow-md);
+}
+
+.article:hover::before {
+	opacity: 1;
+}
+
+.article__meta {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	color: var(--text-muted);
+	margin-bottom: 14px;
+}
+
+.article__meta i {
+	color: var(--accent);
+	font-size: 14px;
+}
+
+.article__title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin-bottom: 12px;
+	letter-spacing: -0.01em;
+	line-height: 1.35;
+	color: var(--text);
+}
+
+.article__excerpt {
+	font-size: 14px;
+	color: var(--text-dim);
+	line-height: 1.6;
+	margin-bottom: 18px;
+}
+
+.article__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--accent);
+	font-family: var(--font-mono);
+	transition: gap 0.2s var(--ease);
+}
+
+.article:hover .article__cta {
+	gap: 10px;
+}
+
+.article__cta i {
+	font-size: 11px;
+}
+
 /* Reduced motion
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
