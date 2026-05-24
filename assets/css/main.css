@@ -3945,6 +3945,162 @@ input, select, textarea {
 
 		}
 
+/* Intro Enhanced Styles */
+
+	.intro-subtitle {
+		font-size: 1.5rem !important;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+		color: #18bfef;
+		margin-bottom: 1rem;
+		font-style: normal;
+	}
+
+	.intro-description {
+		font-size: 1.1rem !important;
+		font-weight: 300;
+		line-height: 1.6;
+		color: #e0e0e0;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.intro-tech {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75rem;
+		margin: 2rem 0;
+	}
+
+	.tech-tag {
+		display: inline-block;
+		background: rgba(24, 191, 239, 0.15);
+		border: 1px solid #18bfef;
+		color: #18bfef;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+	}
+
+	.tech-tag:hover {
+		background: rgba(24, 191, 239, 0.3);
+		box-shadow: 0 0 10px rgba(24, 191, 239, 0.3);
+	}
+
+/* Tech Stack Badges for Projects */
+
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin: 1rem 0 0.5rem 0;
+		justify-content: center;
+	}
+
+	.tech-badge {
+		display: inline-flex;
+		align-items: center;
+		background: linear-gradient(135deg, #18bfef, #0d9ecf);
+		color: #ffffff;
+		padding: 0.4rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		box-shadow: 0 2px 8px rgba(24, 191, 239, 0.2);
+		transition: all 0.3s ease;
+	}
+
+	.tech-badge:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(24, 191, 239, 0.4);
+	}
+
+	#main > .posts > article header {
+		position: relative;
+		z-index: 1;
+	}
+
+/* Enhanced Navigation & Header Styling */
+
+	#nav {
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	}
+
+	#nav a {
+		position: relative;
+		font-weight: 700;
+	}
+
+	#nav a:before {
+		content: '';
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: #18bfef;
+		transition: width 0.3s ease;
+	}
+
+	#nav a:hover:before {
+		width: 100%;
+	}
+
+	#header .logo {
+		position: relative;
+		overflow: hidden;
+	}
+
+	#header .logo:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: rgba(24, 191, 239, 0.1);
+		transition: left 0.3s ease;
+	}
+
+	#header .logo:hover:before {
+		left: 0;
+	}
+
+	/* Project Cards Enhancement */
+	#main > .posts > article {
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	#main > .posts > article:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 15px rgba(24, 191, 239, 0.2);
+	}
+
+	#main > .posts > article .image {
+		overflow: hidden;
+		transition: transform 0.4s ease;
+	}
+
+	#main > .posts > article:hover .image {
+		transform: scale(1.05);
+	}
+
+	#main > .posts > article p {
+		transition: color 0.3s ease;
+	}
+
+	#main > .posts > article:hover p {
+		color: #18bfef;
+	}
+
 /* Footer */
 
 	#footer {
